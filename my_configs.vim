@@ -12,8 +12,13 @@ function! GetColorSchemes()
    \)))
 endfunction
 
+" so ubuntu20 doesn't have a rand() function in their vim patch sooo...
+function! Randi()
+    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+endfunction
+
 " set that random color scheme
 let my_colors = GetColorSchemes()
-execute 'colo' my_colors[rand() % len(my_colors)]
+execute 'colo' my_colors[Randi() % len(my_colors)]
 
 
