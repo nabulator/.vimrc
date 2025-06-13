@@ -22,3 +22,5 @@ let my_colors = GetColorSchemes()
 execute 'colo' my_colors[Randi() % len(my_colors)]
 
 
+" I need that damn visual block key... let's get rid of that macro
+nnoremap q <c-v>
